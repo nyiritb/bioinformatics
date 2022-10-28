@@ -1,3 +1,5 @@
+import utils
+
 def count_bases(dna):
     """Count the number of bases in a DNA sequence."""
     # Initialize the dictionary
@@ -8,4 +10,4 @@ def count_bases(dna):
     return bases
 
 if __name__ == '__main__':
-    assert(count_bases('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC') == {'A': 20, 'C': 12, 'G': 17, 'T': 21})
+    print(count_bases(utils.read_fasta('resources/dna_in.txt')))
