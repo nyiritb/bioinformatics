@@ -3,7 +3,7 @@ Requirements:
   * sudo apt install python3-virtualenv
   * sudo apt-get install make
 
-How to run:
+How to install:
 * make install
 
 Clean before re-install:
