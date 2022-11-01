@@ -23,8 +23,6 @@ def shortest_common_superstring(strings):
     edges = overlap_graph(strings)
     while len(nodes) > 1:
         edge_to_merge = max(edges, key=lambda x: x[2])
-        if edge_to_merge[2] == 0:
-            raise Exception('Graph is not a tree')
         nodes.remove(edge_to_merge[0])
         nodes.remove(edge_to_merge[1])
         nodes.append(merge_strings(*edge_to_merge))
