@@ -79,9 +79,12 @@ def dna_to_rna(dna: str) -> str:
     """Return the RNA string corresponding to a DNA string."""
     return dna.replace('T', 'U')
 
-def rna_to_amino_acids(rna: str) -> str:
+def rna_to_amino_acids(rna: str, include_stop = True) -> str:
     """Return the amino acid string corresponding to a RNA string."""
     if len(rna) % 3 != 0:
         raise ValueError('The length of the RNA string must be a multiple of 3.')
     translator = codon_table()
-    return ''.join([translator[rna[i:i+3]] for i in range(0, len(rna), 3)])
+    if include_stop:
+        return ''.join([translator[rna[i:i+3]] for i in range(0, len(rna), 3)])
+    else:
+        return ''.join([translator[rna[i:i+3]] for i in range(0, len(rna), 3) if translator[rna[i:i+3]] != 'Stop'])
