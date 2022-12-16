@@ -3,11 +3,11 @@ Requirements:
   * sudo apt install python3-virtualenv
   * sudo apt-get install make
 
-How to install:
-* make install
-
-Clean before re-install:
+Clean before install:
 * make clean
+
+Install:
+* make install
 
 Run unit tests:
 * make test
